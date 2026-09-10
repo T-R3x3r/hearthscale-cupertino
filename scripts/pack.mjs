@@ -19,6 +19,7 @@ try {
     "icons",
     "LICENSE.txt",
     "README.md",
+    "previews",
   ]) {
     cpSync(join(root, file), join(stage, "cupertino", file), {
       recursive: true,
