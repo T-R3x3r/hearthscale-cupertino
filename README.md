@@ -8,6 +8,14 @@ by Alexis C. The colourways, icon set and system font stack can each be used sep
 Requires the greenfield desktop's September 10, 2026 shell styling API. Builds made
 before that API do not provide all the component hooks this theme uses.
 
+## Preview
+
+Captured in the Windows desktop at 100% interface size.
+
+![Cupertino in light mode](previews/light.png)
+
+![Cupertino in dark mode](previews/dark.png)
+
 ## Install
 
 1. Download `cupertino.tar.gz` from [Releases](https://github.com/T-R3x3r/hearthscale-cupertino/releases).
