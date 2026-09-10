@@ -1,0 +1,544 @@
+/* Cupertino for Hearthscale. Adapted from Obsidian Cupertino; see LICENSE.txt. */
+.hs-shell {
+  --r-ctl: 6px;
+  --r-row: 7px;
+  --r-mark: 10px;
+  --r-card: 12px;
+  --r-xs: 3px;
+  --bw: 1px;
+  --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
+  --selection: var(--accent);
+  --selection-ink: var(--accent-ink);
+  --switch-radius: 100px;
+  --switch-thumb-radius: 100px;
+  --switch-thumb: #ffffff;
+  --switch-thumb-on: #ffffff;
+  --fs-sm: 12px;
+  --fs-md: 13px;
+  --fs-body: 13px;
+  --fs-row: 13px;
+  --fs-lead: 14px;
+  --fs-title: 20px;
+  --fs-dialog: 15px;
+  --fs-hero: 26px;
+  --fw-strong: 600;
+  --session-row-height: 30px;
+  --subagent-row-height: 28px;
+  --project-row-height: 32px;
+  --blur-tip: blur(8px) saturate(1.5);
+  --blur-surface: blur(16px) saturate(1.5);
+  --blur-overlay: blur(24px) saturate(1.5);
+  --blur-sheet: blur(24px) saturate(1.5);
+  --grain: 0;
+  --press: scale(0.9);
+  --press-fade: 0.8;
+  --hov-lift: none;
+  --dur-fast: 80ms;
+  --dur: 160ms;
+  --dur-slow: 320ms;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Depth is two constructions, not one at two opacities: in light a white
+   inner bevel over a soft drop, in dark a white hairline over a black one.
+   Both live here rather than in a scheme sheet, so a colourway worn over
+   this theme replaces the colours and leaves the depth. */
+.hs-shell[data-theme="light"],
+[data-theme="light"] .hs-shell {
+  --shadow-raise:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 8px rgba(0, 0, 0, 0.025),
+    0 4px 24px rgba(0, 0, 0, 0.075);
+  --shadow-pop:
+    0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px #ffffff,
+    0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-float:
+    0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 4px 24px rgba(0, 0, 0, 0.075);
+  --shadow-modal:
+    0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px #ffffff,
+    0 16px 64px rgba(0, 0, 0, 0.15);
+  --shadow-drag:
+    0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px #ffffff,
+    0 16px 64px rgba(0, 0, 0, 0.15);
+  --wshadow:
+    0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 4px 24px rgba(0, 0, 0, 0.075);
+  --gloss: none;
+  --glossline: rgba(255, 255, 255, 0.5);
+}
+
+.hs-shell[data-theme="dark"],
+[data-theme="dark"] .hs-shell {
+  --shadow-raise:
+    inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2),
+    inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-pop:
+    0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-float:
+    0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-modal:
+    0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0 1px rgba(0, 0, 0, 0.7), 0 16px 64px rgba(0, 0, 0, 0.3);
+  --shadow-drag:
+    0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0 1px rgba(0, 0, 0, 0.7), 0 16px 64px rgba(0, 0, 0, 0.3);
+  --wshadow:
+    0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+  --gloss: none;
+  --glossline: rgba(255, 255, 255, 0.2);
+}
+
+.hs-shell,
+.hs-shell * {
+  corner-shape: superellipse(1.1);
+}
+.hs-frame-gloss {
+  box-shadow: none;
+}
+.hs-frame-body {
+  gap: 6px;
+  padding: 0 8px 8px;
+}
+.hs-side {
+  background: var(--glass);
+  border-radius: 12px;
+  border: 1px solid var(--winb);
+  backdrop-filter: var(--blur-surface);
+}
+.hs-window-wrap {
+  padding: 0;
+}
+.hs-window {
+  border-radius: 12px;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--text) 8%, transparent);
+}
+.hs-toolbar {
+  height: 46px;
+  background: var(--win);
+  border-bottom-color: var(--line);
+}
+.hs-toolbar-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.hs-breadcrumb-separator {
+  font-size: 16px;
+  font-weight: 400;
+  transform: none;
+}
+.hs-session-title {
+  font-size: 13px;
+}
+.hs-nav-column {
+  width: 100%;
+  padding: 10px 8px 8px;
+  box-sizing: border-box;
+}
+.hs-nav-scroll {
+  padding: 0;
+  gap: 2px;
+}
+.hs-navhead {
+  color: var(--mut);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 16px 10px 5px;
+}
+.hs-navrow {
+  min-height: 30px;
+  height: auto;
+  padding: 6px 9px;
+  gap: 8px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+.hs-nav-icon {
+  color: inherit;
+}
+.hs-nav-back,
+.hs-nav-rail-back {
+  border-radius: 7px;
+  box-shadow: none;
+  border-color: transparent;
+  background: transparent;
+}
+.hs-nav-footer {
+  padding: 0;
+}
+.hs-nav-rail-item {
+  border-radius: 7px;
+  color: var(--text);
+}
+.hs-nav-rail-item.hs-boxact {
+  color: var(--selection-ink);
+}
+.hs-sidebar-column {
+  width: 100%;
+  padding: 6px 8px 8px;
+  box-sizing: border-box;
+}
+.hs-sidebar-scroll {
+  padding-right: 0;
+}
+.hs-plugrow {
+  height: 32px;
+  border-radius: 6px;
+  padding: 0 8px;
+  gap: 8px;
+}
+.hs-projrow {
+  height: calc(var(--project-row-height) - 2px);
+  border-radius: 6px;
+}
+.hs-sessrow {
+  height: calc(var(--session-row-height) - 2px);
+  border-radius: 6px;
+}
+.hs-subagent-slot .hs-sessrow {
+  height: calc(var(--subagent-row-height) - 2px);
+}
+.hs-mitem[data-sel="true"],
+.hs-sessrow.hs-boxsel,
+.hs-plugrow.hs-boxsel,
+.hs-projrow.hs-boxsel {
+  background: var(--selection);
+  color: var(--selection-ink);
+  box-shadow: none;
+}
+.hs-side
+  .hs-boxsel
+  :is(
+    .hs-inkmut,
+    .hs-inkdim,
+    .hs-inktext,
+    .hs-rowact,
+    .hs-pinned,
+    .hs-sidebar-mark
+  ) {
+  color: inherit;
+}
+.hs-sessrow.hs-boxsel:hover {
+  background: var(--selection);
+  color: var(--selection-ink);
+}
+.hs-settings-scroll {
+  padding: 28px 32px 36px;
+}
+.hs-settings-content {
+  max-width: 760px;
+}
+.hs-settings-title {
+  font-size: 20px;
+  letter-spacing: -0.025em;
+}
+.hs-settings-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  font-size: 13px;
+  border-top-color: var(--line);
+}
+.hs-setting-title {
+  font-size: 13px;
+}
+.hs-setting-sub,
+.hs-setting-value {
+  font-size: 12px;
+}
+.hs-toggle-row,
+.hs-info-row {
+  padding: 12px 2px;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+.hs-settings-search,
+.hs-file-search,
+.hs-browser-address {
+  border-radius: 8px;
+  height: 30px;
+  border: 1px solid var(--tipline);
+  background: var(--hov);
+  box-shadow: none;
+}
+.hs-url:focus-within {
+  background: var(--win);
+  box-shadow: var(--ring);
+}
+.hs-settings-search .hs-urlph,
+.hs-file-search .hs-urlph {
+  left: 30px;
+  transform: translateY(-50%);
+}
+.hs-settings-search:focus-within .hs-urlph,
+.hs-file-search:focus-within .hs-urlph {
+  left: 30px;
+}
+.hs-settings-search .hs-ph-icon::before,
+.hs-file-search .hs-ph-icon::before {
+  display: none;
+}
+.hs-urlin {
+  font-size: 12px;
+}
+.hs-in,
+.hs-ta {
+  caret-color: var(--accent);
+}
+.hs-in:focus-visible,
+.hs-ta:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 65%, transparent);
+  outline-offset: 2px;
+}
+.hs-urlin:focus-visible,
+.hs-composer-input:focus-visible {
+  outline: none;
+}
+.hs-chat-composer:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--cardb));
+}
+.hs-glassbtn {
+  border-radius: 6px;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--text) 10%, transparent);
+}
+.hs-glassbtn:hover {
+  background: var(--btnhov);
+  box-shadow: var(--shadow-raise);
+}
+.hs-utilbtn,
+.hs-toolbar-button,
+.hs-panel-button,
+.hs-composer-attach,
+.hs-chat-action,
+.hs-jump {
+  border-radius: 50%;
+  corner-shape: round;
+}
+.hs-utilbtn {
+  width: 30px;
+  height: 30px;
+}
+.hs-utilbtn:hover,
+.hs-toolbar-button:hover,
+.hs-panel-button:hover {
+  background: var(--hov);
+  box-shadow: var(--shadow-raise);
+}
+.hs-select {
+  height: 26px;
+  padding: 0 9px;
+  font-size: 12px;
+  gap: 10px;
+  background: var(--win);
+  border: 1px solid var(--tipline);
+}
+.hs-settings-button {
+  padding: 4px 12px;
+  min-height: 26px;
+  font-size: 12px;
+  box-sizing: border-box;
+  background: var(--win);
+  border: 1px solid var(--tipline);
+}
+.hs-settings-button[data-strong="true"][data-danger="false"],
+.hs-sheet-button[data-strong="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: transparent;
+}
+.hs-chip {
+  padding: 5px 11px;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.hs-chip[data-sel="true"] {
+  background: var(--selection);
+  color: var(--selection-ink);
+  border-color: transparent;
+}
+.hs-tog {
+  width: 34px;
+  height: 20px;
+  padding: 2px;
+  border: 0;
+  background: var(--act);
+  box-shadow: inset 0 0 0 1px var(--tipline);
+  corner-shape: round;
+}
+.hs-tog i {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  corner-shape: round;
+}
+.hs-tog[data-on="true"] {
+  background: var(--accent);
+  box-shadow: none;
+}
+.hs-tog[data-on="true"] i {
+  transform: translateX(14px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.hs-range {
+  height: 4px;
+  background: var(--act);
+}
+.hs-range::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  corner-shape: round;
+  background: #fff;
+  box-shadow:
+    0 0 1px rgba(0, 0, 0, 0.3),
+    0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.hs-menu {
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: var(--shadow-pop);
+  animation: none;
+}
+.hs-menu[data-closing="true"] {
+  transform: none;
+}
+.hs-menu .hs-mitem {
+  min-height: 26px;
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.hs-menu .hs-mitem:not([data-disabled="true"]):hover {
+  background: var(--selection);
+  color: var(--selection-ink);
+}
+.hs-menu .hs-mitem:hover :is(.hs-menu-sub, .hs-menu-chip) {
+  color: inherit;
+}
+.hs-tip {
+  border-radius: 6px;
+  box-shadow: var(--shadow-pop);
+}
+.hs-confirm-box,
+.hs-sheet-box {
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid var(--tipline);
+  box-shadow: var(--shadow-modal);
+}
+.hs-confirm-title,
+.hs-sheet-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+.hs-confirm-body,
+.hs-sheet-hint {
+  font-size: 13px;
+}
+.hs-confirm-action,
+.hs-confirm-cancel,
+.hs-sheet-button {
+  border-radius: 6px;
+  padding: 5px 14px;
+}
+.hs-sheet-input {
+  border-radius: 7px;
+}
+.hs-chat-composer {
+  border-radius: 14px;
+  background: var(--win);
+  border: 1px solid var(--cardb);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 8%);
+}
+.hs-composer-glimmer {
+  display: none;
+}
+.hs-composer-input {
+  font-size: var(--chat-size);
+}
+.hs-composer-send,
+.hs-composer-stop {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: none;
+  corner-shape: round;
+}
+.hs-composer-disabled {
+  background: var(--act);
+  color: var(--mut);
+  box-shadow: none;
+  corner-shape: round;
+}
+.hs-user-bubble,
+.hs-user-edit {
+  border-radius: 16px 16px 5px 16px;
+  padding: 10px 15px;
+}
+.hs-tool-output {
+  border-radius: 8px;
+}
+.hs-panel-surface {
+  background: var(--glass);
+  border-left: 1px solid var(--line);
+}
+.hs-panel-tab {
+  border-radius: 6px;
+  font-size: 12px;
+}
+.hs-panel-tab[data-sel="true"] {
+  background: var(--win);
+  color: var(--text);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--text) 12%, transparent);
+}
+.hs-panel-toolbar {
+  height: 44px;
+}
+.hs-file-row {
+  border-radius: 5px;
+}
+.hs-shell ::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs-shell {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+    --press: none;
+  }
+}
+
+.hs-boxact {
+  background: var(--selection);
+  color: var(--selection-ink);
+}
+.hs-sidebar-rail-item.hs-boxact {
+  color: var(--selection-ink);
+}
+.hs-appearance-tile,
+.hs-colourway-tile {
+  border-radius: 10px;
+  background: var(--win);
+}
+.hs-appearance-tile[data-sel="true"] {
+  outline: 2px solid var(--accent);
+}
+.hs-theme-preview {
+  border-radius: 7px;
+}
+.hs-provider-field,
+.hs-colourway-name-input {
+  border-radius: 7px;
+}
+.hs-panel-field:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 65%, transparent);
+  outline-offset: 2px;
+}
+.hs-key-record,
+.hs-key-binding {
+  border-radius: 5px;
+}

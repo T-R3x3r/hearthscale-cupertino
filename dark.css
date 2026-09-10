@@ -1,0 +1,77 @@
+/*
+ * Cupertino, dark: the backgrounds, the ink, the glass tints and the three
+ * system colours the product uses, from obsidian-cupertino 3.2.12's
+ * `src/color-schemes/cupertino.scss` and `src/elements/cupertino.scss`.
+ * Every mix and relative colour is written out, because the window frame
+ * reads --bg and --capt as plain colours before any cascade exists.
+ * See LICENSE.txt.
+ */
+.hs-shell {
+  /* #1e1e1e, and #1e1e1e mixed with 3%, 5% and 8% white. */
+  --bg: #292929;
+  --win: #1e1e1e;
+  --card: #252525;
+  --fadeL: none;
+  --glassrgb: 41 41 41;
+  --glassa: 0.75;
+  --tiprgb: 41 41 41;
+  --tipa: 0.75;
+
+  --text: #dddddd;
+  --mut: #9a9a9a;
+  --dim: #565656;
+  --capt: #565656;
+
+  /* A border is 7.5% white and does not answer a hover; a divider is the
+     ground mixed with a further 7.5% white. */
+  --winb: rgba(255, 255, 255, 0.075);
+  --cardb: rgba(255, 255, 255, 0.075);
+  --tipline: rgba(255, 255, 255, 0.075);
+  --line: #393939;
+  --sline: rgba(255, 255, 255, 0.12);
+
+  /* The interactive fill, whose hover is the same value: a hovered control
+     rises rather than tinting. */
+  --hov: rgba(255, 255, 255, 0.05);
+  --btnhov: rgba(255, 255, 255, 0.05);
+  --act: rgba(255, 255, 255, 0.08);
+  --barbg: rgba(255, 255, 255, 0.05);
+
+  /* Three of the eight system colours: the rest have nothing to paint. */
+  --bad: #ff4245;
+  --ok: #30d158;
+  --warn: #ff9230;
+
+  --scroll: rgba(255, 255, 255, 0.14);
+  --scrollhov: rgba(255, 255, 255, 0.3);
+  --glimmer: rgba(255, 255, 255, 0.45);
+
+  --accent: #0a84ff;
+  --accent-ink: #ffffff;
+  --accent-grad: radial-gradient(
+    95% 130% at 50% 96%,
+    #d6ecff 0%,
+    #8ccbff 22%,
+    #34a5ff 48%,
+    #0091ff 72%,
+    #0069c0 100%
+  );
+  --accent-grad-off: radial-gradient(
+    95% 130% at 50% 96%,
+    #c9ced3 0%,
+    #a2aab2 22%,
+    #757f89 48%,
+    #5c666f 72%,
+    #454e56 100%
+  );
+  --accent-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 145, 255, 0.35);
+  --mark-hi: #8ccbff;
+  --mark-lo: #0091ff;
+
+  --bubu: #0091ff;
+  --bubut: #ffffff;
+  --buba: #303030;
+  --bubat: #dddddd;
+}

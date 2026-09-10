@@ -1,0 +1,13 @@
+{
+  "name": "hearthscale-cupertino",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "icons": "node scripts/icons.mjs",
+    "pack": "node scripts/pack.mjs"
+  },
+  "devDependencies": {
+    "remixicon": "4.9.1"
+  }
+}

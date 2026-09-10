@@ -1,0 +1,78 @@
+/*
+ * Cupertino, light: the backgrounds, the ink, the glass tints and the three
+ * system colours the product uses, from obsidian-cupertino 3.2.12's
+ * `src/color-schemes/cupertino.scss` and `src/elements/cupertino.scss`.
+ * Every mix and relative colour is written out, because the window frame
+ * reads --bg and --capt as plain colours before any cascade exists.
+ * See LICENSE.txt.
+ */
+.hs-shell {
+  /* White, and white mixed with 3%, 5% and 8% black. */
+  --bg: #f2f2f2;
+  --win: #ffffff;
+  --card: #f7f7f7;
+  --fadeL: none;
+  --glassrgb: 242 242 242;
+  --glassa: 0.75;
+  --tiprgb: 242 242 242;
+  --tipa: 0.75;
+
+  /* 85%, 55% and 25% black. */
+  --text: #262626;
+  --mut: #737373;
+  --dim: #8e8e93;
+  --capt: #737373;
+
+  /* A border is 7.5% black and does not answer a hover; a divider is the
+     ground mixed with a further 7.5% black. */
+  --winb: rgba(0, 0, 0, 0.075);
+  --cardb: rgba(0, 0, 0, 0.075);
+  --tipline: rgba(0, 0, 0, 0.075);
+  --line: #e0e0e0;
+  --sline: rgba(0, 0, 0, 0.12);
+
+  /* The interactive fill, whose hover is the same value: a hovered control
+     rises rather than tinting. */
+  --hov: rgba(0, 0, 0, 0.05);
+  --btnhov: rgba(0, 0, 0, 0.05);
+  --act: rgba(0, 0, 0, 0.08);
+  --barbg: rgba(0, 0, 0, 0.05);
+
+  /* Three of the eight system colours: the rest have nothing to paint. */
+  --bad: #ff383c;
+  --ok: #34c759;
+  --warn: #ff8d28;
+
+  --scroll: rgba(0, 0, 0, 0.18);
+  --scrollhov: rgba(0, 0, 0, 0.34);
+  --glimmer: rgba(255, 255, 255, 0.95);
+
+  --accent: #007aff;
+  --accent-ink: #ffffff;
+  --accent-grad: radial-gradient(
+    95% 130% at 50% 96%,
+    #cfe8ff 0%,
+    #7fc2ff 22%,
+    #2ba0ff 48%,
+    #0088ff 72%,
+    #0062c4 100%
+  );
+  --accent-grad-off: radial-gradient(
+    95% 130% at 50% 96%,
+    #e6e8ea 0%,
+    #c3c9ce 22%,
+    #9ba4ac 48%,
+    #808a93 72%,
+    #636d77 100%
+  );
+  --accent-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 136, 255, 0.35);
+  --mark-hi: #7fc2ff;
+  --mark-lo: #0088ff;
+
+  --bubu: #0088ff;
+  --bubut: #ffffff;
+  --buba: #f2f2f2;
+  --bubat: #262626;
+}
