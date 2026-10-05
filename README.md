@@ -5,8 +5,9 @@ surfaces, compact text controls, continuous corners and soft shadows. It adapts 
 macOS branch of [Obsidian Cupertino](https://github.com/aaaaalexis/obsidian-cupertino)
 by Alexis C. The colourways, icon set and system font stack can each be used separately.
 
-Requires the greenfield desktop's September 10, 2026 shell styling API. Builds made
-before that API do not provide all the component hooks this theme uses.
+Requires a Hearthscale desktop that reads one corner through its roles (`--r`,
+`--r-ctl`, `--r-card`, `--r-tile`) and draws the background blobs, the gloss and the
+shadows from a colourway's colour inputs. Earlier builds do not read them.
 
 ## Preview
 
@@ -27,8 +28,6 @@ Captured in the Windows desktop at 100% interface size.
 
 You can also clone this repository directly into `themes/cupertino`. The extra source
 files are ignored by the loader. Edits to the CSS apply live while the theme is selected.
-A user-installed copy takes precedence over the bundled copy. Remove the user copy
-from Appearance, then select the bundled version again. Theme Marketplace installation is not implemented yet.
 
 ## Make your own theme
 
@@ -38,9 +37,9 @@ folder name. There is no build step for editing CSS.
 
 | File                               | Purpose                                                              |
 | ---------------------------------- | -------------------------------------------------------------------- |
-| `manifest.json`                    | Display name and author                                              |
+| `manifest.json`                    | Id (the folder's name), name, version, description and author        |
 | `theme.css`                        | Component geometry, typography, motion, materials and state styling  |
-| `light.css`, `dark.css`            | Independent complete colourways                                      |
+| `light.css`, `dark.css`            | Independent colourways: colours only                                 |
 | `icons/`                           | Remix Icon SVGs keyed by interface role; transcript roles in `chat/` |
 | `fonts/manifest.json`              | Font families; no font binaries are bundled                          |
 | `LICENSE.txt`, `icons/LICENSE.txt` | Upstream notices                                                     |
@@ -75,8 +74,7 @@ npm run pack
 
 `pack` requires `tar` (included with Windows, macOS and common Linux distributions).
 It writes `dist/cupertino.tar.gz` and prints its SHA-256. Publish that file on a tagged
-GitHub release. Hearthscale's bundled-theme pin records the immutable release URL and
-hash; its build downloads and verifies the archive. The installed app stays offline.
+GitHub release.
 
 The font stack uses SF Pro where installed, then the platform's interface font. Apple's
 fonts are not redistributed. Remix Icon 4.9.1 supplies the line glyphs under Apache-2.0;

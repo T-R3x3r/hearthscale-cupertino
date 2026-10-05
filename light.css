@@ -11,11 +11,16 @@
   --bg: #f2f2f2;
   --win: #ffffff;
   --card: #f7f7f7;
-  --fadeL: none;
   --glassrgb: 242 242 242;
-  --glassa: 0.75;
   --tiprgb: 242 242 242;
-  --tipa: 0.75;
+
+  /* No colour blobs behind the frame, whatever theme draws them. */
+  --fade-1: transparent;
+  --fade-2: transparent;
+  --fade-3: transparent;
+  --fade-4: transparent;
+  --fade-5: transparent;
+  --fade-6: transparent;
 
   /* 85%, 55% and 25% black. */
   --text: #262626;
@@ -65,14 +70,11 @@
     #808a93 72%,
     #636d77 100%
   );
-  --accent-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 136, 255, 0.35);
+  --accent-glow-tint: rgba(0, 136, 255, 0.3);
+  --accent-shadow-tint: rgba(0, 136, 255, 0.35);
   --mark-hi: #7fc2ff;
   --mark-lo: #0088ff;
 
   --bubu: #0088ff;
   --bubut: #ffffff;
-  --buba: #f2f2f2;
-  --bubat: #262626;
 }
