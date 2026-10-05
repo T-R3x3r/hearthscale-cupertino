@@ -1,1 +1,7 @@
-{"name":"Cupertino","author":"Alexis C"}
+{
+  "id": "cupertino",
+  "name": "Cupertino",
+  "version": "2.0.0",
+  "description": "An Apple-inspired theme: blue selection, quiet translucent surfaces and continuous corners.",
+  "author": "Alexis C"
+}
