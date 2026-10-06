@@ -37,10 +37,9 @@
   --wshadow: 0 1px 3px color-mix(in srgb, var(--text) 8%, transparent);
   --press: scale(0.9);
   --press-fade: 0.8;
-  --dur-fast: 80ms;
   --dur: 160ms;
   --dur-slow: 320ms;
-  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* Depth is two constructions, not one at two opacities: in light a white
@@ -379,10 +378,6 @@
 .hs-menu {
   padding: 5px;
   box-shadow: var(--shadow-pop);
-  animation: none;
-}
-.hs-menu[data-closing="true"] {
-  transform: none;
 }
 .hs-menu .hs-mitem {
   min-height: 26px;
@@ -455,7 +450,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .hs-shell {
-    --dur-fast: 0ms;
     --dur: 0ms;
     --dur-slow: 0ms;
     --press: none;
