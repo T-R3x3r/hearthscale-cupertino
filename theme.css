@@ -389,7 +389,8 @@
   background: var(--selection);
   color: var(--selection-ink);
 }
-.hs-menu .hs-mitem:hover :is(.hs-menu-sub, .hs-menu-chip) {
+.hs-menu .hs-mitem:hover :is(.hs-menu-sub, .hs-menu-chip),
+.hs-mitem[data-sel="true"] :is(.hs-menu-sub, .hs-menu-chip) {
   color: inherit;
 }
 .hs-tip {
