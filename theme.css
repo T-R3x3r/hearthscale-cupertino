@@ -362,6 +362,12 @@
   height: 4px;
   background: var(--act);
 }
+/* A colourway may set --act to white in light, so there an off switch and
+   the slider's track take the ink, faint. */
+.hs-shell[data-theme="light"] :is(.hs-tog:not([data-on="true"]), .hs-range),
+[data-theme="light"] .hs-shell :is(.hs-tog:not([data-on="true"]), .hs-range) {
+  background: color-mix(in srgb, var(--text) 9.4%, transparent);
+}
 .hs-range::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
