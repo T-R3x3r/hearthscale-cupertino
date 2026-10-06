@@ -126,7 +126,6 @@
   font-size: 13px;
 }
 .hs-nav-column {
-  width: 100%;
   padding: 10px 8px 8px;
   box-sizing: border-box;
 }
@@ -166,7 +165,6 @@
   color: var(--selection-ink);
 }
 .hs-sidebar-column {
-  width: 100%;
   padding: 6px 8px 8px;
   box-sizing: border-box;
 }
