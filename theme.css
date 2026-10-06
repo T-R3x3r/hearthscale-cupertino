@@ -197,8 +197,7 @@
   color: var(--selection-ink);
   box-shadow: none;
 }
-.hs-side
-  .hs-boxsel
+.hs-boxsel
   :is(
     .hs-inkmut,
     .hs-inkdim,
