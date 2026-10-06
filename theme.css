@@ -152,15 +152,6 @@
 .hs-nav-icon {
   color: inherit;
 }
-.hs-nav-back,
-.hs-nav-rail-back {
-  box-shadow: none;
-  border-color: transparent;
-  background: transparent;
-}
-.hs-nav-footer {
-  padding: 0;
-}
 .hs-nav-rail-item {
   color: var(--text);
 }
@@ -284,20 +275,12 @@
   background: var(--btnhov);
   box-shadow: var(--shadow-raise);
 }
-.hs-utilbtn,
-.hs-toolbar-button,
 .hs-panel-button,
 .hs-chat-action,
 .hs-jump {
   border-radius: var(--r-round);
   corner-shape: round;
 }
-.hs-utilbtn {
-  width: 30px;
-  height: 30px;
-}
-.hs-utilbtn:hover,
-.hs-toolbar-button:hover,
 .hs-panel-button:hover {
   background: var(--hov);
   box-shadow: var(--shadow-raise);
@@ -430,10 +413,6 @@
   border-radius: 16px 16px 5px 16px;
   padding: 10px 15px;
 }
-.hs-panel-surface {
-  background: var(--glass);
-  border-left: 1px solid var(--line);
-}
 .hs-panel-tab {
   font-size: 12px;
 }
@@ -441,9 +420,6 @@
   background: var(--win);
   color: var(--text);
   box-shadow: 0 1px 3px color-mix(in srgb, var(--text) 12%, transparent);
-}
-.hs-panel-toolbar {
-  height: 44px;
 }
 .hs-shell ::selection {
   background: color-mix(in srgb, var(--accent) 30%, transparent);

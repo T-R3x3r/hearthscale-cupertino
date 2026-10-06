@@ -32,8 +32,11 @@ files are ignored by the loader. Edits to the CSS apply live while the theme is 
 ## Make your own theme
 
 This repository is an ordinary theme folder, with no application code or privileged
-loader path. Copy it, change the name in `manifest.json`, and install it under your own
-folder name. There is no build step for editing CSS.
+loader path. Copy it, change the id and the name in `manifest.json`, and install it under
+a folder named after the id. There is no build step for editing CSS. To see each save at
+once while you work, start Hearthscale's development desktop from a source checkout with
+`HEARTHSCALE_DEV_THEME` naming your copy. Cupertino is a worked example of the theme
+guide, [Examples: Compact and Cupertino](https://hearthscale.com/docs/developers/themes/examples).
 
 | File                               | Purpose                                                              |
 | ---------------------------------- | -------------------------------------------------------------------- |
