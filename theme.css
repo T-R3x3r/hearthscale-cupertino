@@ -91,6 +91,10 @@
 .hs-shell * {
   corner-shape: superellipse(1.1);
 }
+/* A view's frame under a superellipse clip draws no backdrop blur. */
+.hs-surface {
+  corner-shape: round;
+}
 .hs-frame-gloss {
   box-shadow: none;
 }
