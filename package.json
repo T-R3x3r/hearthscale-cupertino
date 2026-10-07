@@ -8,6 +8,6 @@
     "pack": "node scripts/pack.mjs"
   },
   "devDependencies": {
-    "remixicon": "4.9.1"
+    "remixicon": "4.8.0"
   }
 }

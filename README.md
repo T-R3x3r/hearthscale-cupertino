@@ -80,6 +80,6 @@ It writes `dist/cupertino.tar.gz` and prints its SHA-256. Publish that file on a
 GitHub release.
 
 The font stack uses SF Pro where installed, then the platform's interface font. Apple's
-fonts are not redistributed. Remix Icon 4.9.1 supplies the line glyphs under Apache-2.0;
-Obsidian Cupertino's adapted values retain its MIT notice. This is a Hearthscale port,
-not an Apple product or an upstream Obsidian release.
+fonts are not redistributed. Remix Icon 4.8.0, its last release under Apache-2.0,
+supplies the line glyphs; Obsidian Cupertino's adapted values retain its MIT notice.
+This is a Hearthscale port, not an Apple product or an upstream Obsidian release.

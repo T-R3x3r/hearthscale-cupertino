@@ -118,4 +118,4 @@ writeFileSync(
   join(root, "icons/manifest.json"),
   JSON.stringify({ name: "Cupertino" }) + "\n",
 );
-console.log("Cupertino icons generated from Remix Icon 4.9.1.");
+console.log("Cupertino icons generated from Remix Icon 4.8.0.");
