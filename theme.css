@@ -194,11 +194,15 @@
     .hs-inktext,
     .hs-rowact,
     .hs-pinned,
-    .hs-sidebar-mark
+    .hs-sidebar-mark,
+    .hs-provider-mark,
+    .hs-model-trigger-chevron
   ) {
   color: inherit;
 }
-.hs-sessrow.hs-boxsel:hover {
+/* A selected box keeps its accent plate under the pointer: the hover plate
+   behind the accent ink would leave the label unreadable in dark. */
+.hs-boxsel:hover {
   background: var(--selection);
   color: var(--selection-ink);
 }
