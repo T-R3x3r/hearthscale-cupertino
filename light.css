@@ -4,8 +4,9 @@
  * `src/color-schemes/cupertino.scss` and `src/elements/cupertino.scss`.
  * Every mix and relative colour is written out, because the window frame
  * reads --bg and --capt as plain colours before any cascade exists.
- * The muted ink, the accent, its gradient and the bubble are darker than
- * upstream's, so body text on them keeps a contrast of 4.5 to 1.
+ * The muted ink, the accent, the stops of its gradient under a label, and
+ * the bubble are darker than upstream's, so body text on them keeps a
+ * contrast of 4.5 to 1.
  * See LICENSE.txt.
  */
 .hs-shell {
@@ -55,14 +56,15 @@
   --glimmer: rgba(255, 255, 255, 0.95);
 
   --accent: #0072ef;
+  --link: #0072ef;
   --accent-ink: #ffffff;
   --accent-grad: radial-gradient(
     95% 130% at 50% 96%,
-    #319cff 0%,
-    #0075e0 22%,
-    #004d8c 48%,
-    #003461 72%,
-    #001326 100%
+    #cfe8ff 0%,
+    #0070d6 22%,
+    #0076d6 48%,
+    #0072d6 72%,
+    #0062c4 100%
   );
   --accent-grad-off: radial-gradient(
     95% 130% at 50% 96%,

@@ -27,6 +27,8 @@
   /* Solid frosted glass with no colour blobs, sheen or grain behind it. */
   --fadeL: none;
   --gloss: none;
+  /* The accent fill has no sheen, so the white label keeps its contrast. */
+  --accent-sheen: none;
   --glassa: 0.75;
   --tipa: 0.75;
   --grain: 0;
