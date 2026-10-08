@@ -382,6 +382,12 @@
 .hs-mitem[data-sel="true"] :is(.hs-menu-sub, .hs-menu-chip) {
   color: inherit;
 }
+/* An on switch is the accent, as the plate of a highlighted menu item is,
+   so there it takes the item's ink as its rim. */
+.hs-menu .hs-mitem:not([data-disabled="true"]):hover .hs-tog[data-on="true"],
+.hs-mitem[data-sel="true"] .hs-tog[data-on="true"] {
+  box-shadow: inset 0 0 0 1.5px var(--selection-ink);
+}
 .hs-tip {
   border-radius: 6px;
   box-shadow: var(--shadow-pop);
