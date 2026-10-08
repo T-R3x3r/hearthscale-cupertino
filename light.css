@@ -47,8 +47,10 @@
   --act: rgba(0, 0, 0, 0.08);
   --barbg: rgba(0, 0, 0, 0.05);
 
-  /* Three of the eight system colours: the rest have nothing to paint. */
-  --bad: #ff383c;
+  /* Three of the eight system colours: the rest have nothing to paint. The
+     red is the system's high-contrast red, so words in it, such as an
+     error, keep a contrast of 4.5 to 1. */
+  --bad: #d70015;
   --ok: #34c759;
   --warn: #ff8d28;
 
