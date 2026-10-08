@@ -4,9 +4,10 @@
  * `src/color-schemes/cupertino.scss` and `src/elements/cupertino.scss`.
  * Every mix and relative colour is written out, because the window frame
  * reads --bg and --capt as plain colours before any cascade exists.
- * The muted ink, the accent, the stops of its gradient under a label, and
- * the bubble are darker than upstream's, so body text on them keeps a
- * contrast of 4.5 to 1.
+ * The accent, the stops of its gradient under a label, and the bubble are
+ * darker than upstream's, so body text on them keeps a contrast of 4.5 to
+ * 1. The muted ink is darker too, so it keeps that contrast on every plate
+ * it sits on, the Marketplace banner's included.
  * See LICENSE.txt.
  */
 .hs-shell {
@@ -25,9 +26,9 @@
   --fade-5: transparent;
   --fade-6: transparent;
 
-  /* 85% and 57% black, and the system grey. */
+  /* 85% and 62% black, and the system grey. */
   --text: #262626;
-  --mut: #6d6d6d;
+  --mut: #616161;
   --dim: #8e8e93;
   --capt: #737373;
 

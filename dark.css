@@ -6,6 +6,8 @@
  * reads --bg and --capt as plain colours before any cascade exists.
  * The accent, the stops of its gradient under a label, and the bubble are
  * darker than upstream's, so body text on them keeps a contrast of 4.5 to 1.
+ * The muted ink is lighter than upstream's, so it keeps that contrast on
+ * every plate it sits on, the Marketplace banner's included.
  * See LICENSE.txt.
  */
 .hs-shell {
@@ -25,7 +27,7 @@
   --fade-6: transparent;
 
   --text: #dddddd;
-  --mut: #9a9a9a;
+  --mut: #a1a1a1;
   --dim: #8e8e93;
   --capt: #8e8e93;
 
