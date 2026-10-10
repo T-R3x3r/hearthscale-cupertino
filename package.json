@@ -4,8 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "icons": "node scripts/icons.mjs",
-    "pack": "node scripts/pack.mjs"
+    "icons": "node scripts/icons.mjs"
   },
   "devDependencies": {
     "remixicon": "4.8.0"

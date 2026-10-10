@@ -19,15 +19,13 @@ Captured in the Windows desktop at 100% interface size.
 
 ## Install
 
-1. Download `cupertino.tar.gz` from [Releases](https://github.com/T-R3x3r/hearthscale-cupertino/releases).
-2. Extract it. In Hearthscale, open **Settings > Appearance > Themes folder**.
-3. Copy the extracted `cupertino` folder into that directory. Its `manifest.json`
-   must sit directly inside `themes/cupertino/`.
-4. Select **Cupertino** in the Theme picker. It applies the theme's light and dark
-   colourways, icons and font stack. Each picker can then be changed independently.
+Install Cupertino from the Marketplace in Hearthscale, then select **Cupertino** under
+**Settings > Appearance > Theme**. It applies the theme's light and dark colourways,
+icons and font stack. Each picker can then be changed independently.
 
-You can also clone this repository directly into `themes/cupertino`. The extra source
-files are ignored by the loader. Edits to the CSS apply live while the theme is selected.
+You can also clone this repository directly into `themes/cupertino`: open
+**Settings > Appearance > Themes folder** to find that folder. The extra source files
+are ignored by the loader. Edits to the CSS apply live while the theme is selected.
 
 ## Make your own theme
 
@@ -72,12 +70,11 @@ The SVGs are committed, so installing needs no Node dependencies. To regenerate:
 ```sh
 npm ci
 npm run icons
-npm run pack
 ```
 
-`pack` requires `tar` (included with Windows, macOS and common Linux distributions).
-It writes `dist/cupertino.tar.gz` and prints its SHA-256. Publish that file on a tagged
-GitHub release.
+A release is a GitHub release whose tag is the `version` in `manifest.json`, without
+a `v`, with the archive that `hearthscale pack .` writes attached. See
+[Publish to the Marketplace](https://hearthscale.com/docs/developers/publish).
 
 The font stack uses SF Pro where installed, then the platform's interface font. Apple's
 fonts are not redistributed. Remix Icon 4.8.0, its last release under Apache-2.0,
