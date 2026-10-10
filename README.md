@@ -1,82 +1,21 @@
-# Cupertino for Hearthscale
+# Cupertino
 
-An Apple-inspired desktop theme for Hearthscale: blue selection, quiet translucent
-surfaces, compact text controls, continuous corners and soft shadows. It adapts the
-macOS branch of [Obsidian Cupertino](https://github.com/aaaaalexis/obsidian-cupertino)
-by Alexis C. The colourways, icon set and system font stack can each be used separately.
-
-Requires a Hearthscale desktop that reads one corner through its roles (`--r`,
-`--r-ctl`, `--r-card`, `--r-tile`) and draws the background blobs, the gloss and the
-shadows from a colourway's colour inputs. Earlier builds do not read them.
-
-## Preview
-
-Captured in the Windows desktop at 100% interface size.
+An Apple-inspired look for Hearthscale: blue selection, quiet translucent surfaces, compact text controls, continuous corners and soft shadows, with light and dark colourways, an icon set and a system font stack of its own.
 
 ![Cupertino in light mode](previews/light.png)
 
 ![Cupertino in dark mode](previews/dark.png)
 
-## Install
+## Get started
 
-Install Cupertino from the Marketplace in Hearthscale, then select **Cupertino** under
-**Settings > Appearance > Theme**. It applies the theme's light and dark colourways,
-icons and font stack. Each picker can then be changed independently.
+Choose **Install**, then **Apply**. Cupertino then dresses Hearthscale in its theme, its light and dark colourways, its icons and its font. Each of them can be changed on its own under **Settings → Appearance**, so you can keep, for example, Cupertino's colours with Hearthscale's own icons.
 
-You can also clone this repository directly into `themes/cupertino`: open
-**Settings > Appearance > Themes folder** to find that folder. The extra source files
-are ignored by the loader. Edits to the CSS apply live while the theme is selected.
+The font is SF Pro where your computer has it, and your system's interface font otherwise. Apple's fonts are not included.
 
-## Make your own theme
+## What Cupertino asks for
 
-This repository is an ordinary theme folder, with no application code or privileged
-loader path. Copy it, change the id and the name in `manifest.json`, and install it under
-a folder named after the id. There is no build step for editing CSS. To see each save at
-once while you work, start Hearthscale's development desktop from a source checkout with
-`HEARTHSCALE_DEV_THEME` naming your copy. Cupertino is a worked example of the theme
-guide, [Examples: Compact and Cupertino](https://hearthscale.com/docs/developers/themes/examples).
+Nothing. A theme changes only how Hearthscale looks: it holds no program, and Hearthscale loads nothing for it from the network.
 
-| File                               | Purpose                                                              |
-| ---------------------------------- | -------------------------------------------------------------------- |
-| `manifest.json`                    | Id (the folder's name), name, version, description and author        |
-| `theme.css`                        | Component geometry, typography, motion, materials and state styling  |
-| `light.css`, `dark.css`            | Independent colourways: colours only                                 |
-| `icons/`                           | Remix Icon SVGs keyed by interface role; transcript roles in `chat/` |
-| `fonts/manifest.json`              | Font families; no font binaries are bundled                          |
-| `LICENSE.txt`, `icons/LICENSE.txt` | Upstream notices                                                     |
+## Credits
 
-The theme layer follows Hearthscale's base styles. Colourways follow the theme, so
-use `var(--accent)` and `var(--accent-ink)` for selection instead of hardcoding blue
-into component selectors. Our colourways supply the blue. The shell's public `hs-*`
-component classes are documented in Hearthscale's `packages/ui/CLASSES.md` and
-`packages/ui/src/shell.css`.
-
-Keep assets local. The loader rejects remote CSS imports/URLs, `!important`, and
-unbalanced braces. `--bg` and `--capt` in colourway sheets must be literal colours
-because the native frame reads them before CSS renders. Approval controls remain
-subject to the guard layer's presence and interaction rules; their presentation can be themed.
-CSS is trusted author code, so this guard is not a sandbox for hostile themes. Native
-OS menus/window controls, third-party website content and the avatar rig are outside
-the stylesheet boundary.
-
-`--session-row-height`, `--subagent-row-height` and `--project-row-height` size the
-virtual list's slots. Keep the corresponding visible rows within their slots.
-Hearthscale measures those slots when a theme or its density changes.
-
-## Icons and release
-
-The SVGs are committed, so installing needs no Node dependencies. To regenerate:
-
-```sh
-npm ci
-npm run icons
-```
-
-A release is a GitHub release whose tag is the `version` in `manifest.json`, without
-a `v`, with the archive that `hearthscale pack .` writes attached. See
-[Publish to the Marketplace](https://hearthscale.com/docs/developers/publish).
-
-The font stack uses SF Pro where installed, then the platform's interface font. Apple's
-fonts are not redistributed. Remix Icon 4.8.0, its last release under Apache-2.0,
-supplies the line glyphs; Obsidian Cupertino's adapted values retain its MIT notice.
-This is a Hearthscale port, not an Apple product or an upstream Obsidian release.
+Cupertino adapts the macOS look of [Obsidian Cupertino](https://github.com/aaaaalexis/obsidian-cupertino) by Alexis C., under its MIT licence. Its icons are [Remix Icon](https://remixicon.com) 4.8.0, under the Apache 2.0 licence. It is a Hearthscale theme, not an Apple product or a release of Obsidian Cupertino.
