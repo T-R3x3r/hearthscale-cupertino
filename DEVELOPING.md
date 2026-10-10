@@ -57,7 +57,9 @@ A release is a GitHub release whose tag is the `version` in `manifest.json`, wit
 a `v`, with the archive that `hearthscale pack .` writes attached. See
 [Publish to the Marketplace](https://hearthscale.com/docs/developers/publish).
 
-The font stack uses SF Pro where installed, then the platform's interface font. Apple's
+The font stack uses the system font on macOS, SF Pro Text where installed elsewhere, then
+the platform's interface font; a bare "SF Pro" would take the Display cut where only
+that cut is installed, which crowds text at interface sizes. Apple's
 fonts are not redistributed. Remix Icon 4.8.0, its last release under Apache-2.0,
 supplies the line glyphs; Obsidian Cupertino's adapted values retain its MIT notice.
 This is a Hearthscale port, not an Apple product or an upstream Obsidian release.

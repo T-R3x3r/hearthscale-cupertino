@@ -10,7 +10,7 @@ An Apple-inspired look for Hearthscale: blue selection, quiet translucent surfac
 
 Choose **Install**, then **Apply**. Cupertino then dresses Hearthscale in its theme, its light and dark colourways, its icons and its font. Each of them can be changed on its own under **Settings → Appearance**, so you can keep, for example, Cupertino's colours with Hearthscale's own icons.
 
-The font is SF Pro where your computer has it, and your system's interface font otherwise. Apple's fonts are not included.
+The font is the system font on a Mac, SF Pro Text on another computer that has it, and your system's interface font otherwise. Apple's fonts are not included.
 
 ## What Cupertino asks for
 
